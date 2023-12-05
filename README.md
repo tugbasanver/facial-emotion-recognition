@@ -1,6 +1,7 @@
 # facial-emotion-recognition
 
 Data
+
 The Facial Emotion Recognition data has 12271 training and 
 3068 testing images and relevant labels which indicates the 
 facial emotion of the image. Image sizes are same, and it is 
@@ -16,7 +17,9 @@ may not be significant improvement on the result metrics since labels have not i
 differences.
 The video data is an AVI type video which has 854x480 pixels and 4020 frames. Its length is 2 minutes and 
 14 seconds. It is a movie trailer video which contains many people with different facial emotions. 
+
 Implemented methods
+
 3 different models are implemented for Facial Emotion Recognition problem, two of them are Support 
 Vector Classifiers, one of them consists of SIFT (Scale Invariant Feature Transform) and the other one has 
 HOG (Histogram of Gradients) feature description extractors to transform image data into proper data form 
@@ -60,7 +63,9 @@ prediction, the SVM model with HOG extractor which was specifically created for 
 function was used with Viola Jones face detection function(haarcascade) after the frame data were 
 transformed into one channel data from RGB data, and then unsigned byte format like SIFT. For HOG 
 transformation, image pixel sizes were changed into 100x100 for a suitable and fast implementation.
+
 Results
+
 Training validation results for SVM model with SIFT extractor has mean accuracy score of 0.41 and mean 
 fitting time of 33 seconds. Gridsearch hyperparameter search with stratified cross validation gave 
 maximum of 0.408 accuracy score and 33.7 seconds of mean fitting time with the best combination.
@@ -71,23 +76,11 @@ seconds.
 Training validation results for CNN model has mean accuracy 
 metric score of 0.66 and fitting time of 15 minutes. There is an 
 emerging gap between training loss curve and validation loss 
-curve after roughly 100th epochs as seen in figure 2.
-On the test side, prediction performance results for SVM 
-model with SIFT descriptor shows that the accuracy metric is 
-0.35. Confusion matrix and classification report can be seen 
-below in figure 3 and 4.
-Fig. 2. Training and validation curves for CNN model
-Fig. 3. Confusion matrix for SIFT+SVM model Fig. 4. Classification report for SIFT+SVM model
-Prediction results for SVM model with HOG descriptor demonstrate that it has roughly 0.64 accuracy level 
-on the unseen test dataset. Confusion matrix and classification report can be seen below in figure 5 and 6.
- Fig. 5. Confusion matrix for HOG+SVM model Fig. 6. Classification report for HOG+SVM model
-Prediction results for CNN model indicates that it has 0.58 accuracy level on the unseen test dataset. 
-Confusion matrix and classification report can be seen below in figure 7 and 8.
- Fig. 7. Confusion matrix for CNN model Fig. 8. Classification report for CNN model
-The EmotionRecognitionVideo function face and emotion detection results can be seen with 4 random 
-frames such as below in the figure 9. The prediction time was roughly 15 seconds.
-Fig. 9. Random 4 images from the selected video data and different emotion labels with face detections
+curve after roughly 100th epochs.
+
+
 Discussion
+
 The SIFT+SVM model prediction performance was as expected from the training validation side. The 
 accuracy result indicates that approximately two of three images were mislabelled. That performance can 
 lead inefficient recognition. To improve it, fixed grid feature extraction can be used in the future works. For 
@@ -108,7 +101,9 @@ but it can be analysed for the future works in order relevant improvements.
 For ‘in the wild’ video recognition, different neural networks algorithms can be used to have better 
 emotion detection. About face detection, Viola Jones algorithm was not efficient to detect faces with 
 different angle positions as can be seen in figure 8. Newer and more complex structures can be researched. 
+
 References
+
 1. Patle and D. S. Chouhan, "SVM kernel functions for classification," 2013 International Conference 
 on Advances in Technology and Engineering (ICATE), 2013, pp. 1-9, doi: 
 10.1109/ICAdTE.2013.6524743.
